@@ -1,0 +1,84 @@
+.button {
+background-color:rgba(230, 19, 19, 0.904);
+border-color: white;
+border-width: 4px;
+border-radius: 5px 10px 0 5px;
+color: white;
+padding: 10px 24px;
+font-size: 16px;
+width: 250px;
+}
+
+.button2 {
+    background-color:rgba(230, 19, 19, 0.904);
+    border-color: white;
+    border-width: 2px;
+    color: white;
+    padding: 5px 12px;
+    font-size: 8px;
+    float: right;
+    }
+
+.groupe {
+    position: relative;
+}
+
+.bas{
+    position: absolute;
+    bottom: -20px;
+}
+
+.text{
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center; 
+    border-width: 2px;
+    border-color: red;
+}
+
+.logoProduit{
+  width: 80px;
+  height: 80px;
+}
+
+.logoProduit2{
+    width: 200px;
+    height: 200px;
+
+  }
+.button3{
+    background-color:rgba(133, 130, 130, 0.904);
+    border-color: white;
+    border-width: 2px;
+    color: white;
+    padding: 5px 12px;
+    font-size: 8px;
+    float: right;
+}
+
+.button4 {
+    background-color:rgba(230, 19, 19, 0.904);
+    border-color: white;
+    border-width: 2px;
+    color: white;
+    padding: 15px 36px;
+    font-size: 20px;
+    float: right;
+    }
+
+.button5{
+    background-color:rgba(133, 130, 130, 0.904);
+    border-color: white;
+    border-width: 2px;
+    color: white;
+    padding: 15px 36px;
+    font-size: 20px;
+    float: right;
+}
+
+.notif{
+    float: left;
+    font-size: 30px;
+    text-align: center;
+}

@@ -1,0 +1,111 @@
+<app-modal #managersModal></app-modal>
+<div class="container*fluid">
+        <div class="row">
+          <div class="col-md-4">
+              <div class="text">
+            <span id="worldname">{{world.name}} </span></div>
+          </div>
+          <div class="col-md-4">
+              <div class="text">Sourires :
+            <span [innerHTML]="world.money | bigvalue"></span></div>
+          </div>
+          <div class="col-md-4"> <input [(ngModel)]="username" type="text"  (change)="updateusername()" class="text"/>
+          <button *ngIf="buttonactuel==0" (click)="increment()" class="button2">x1</button>
+          <button *ngIf="buttonactuel==1" (click)="increment()" class="button2">x10</button>
+          <button *ngIf="buttonactuel==2" (click)="increment()" class="button2">x100</button>
+          <button *ngIf="buttonactuel==3" (click)="increment()" class="button2">Max</button>
+        
+      </div>
+        <div class="row">
+          <div class="col-md-2"><button class="button">Unlocks</button>
+          <button class="button">Cash upgrades</button>
+          <button class="button">Angel upgrades</button>
+        </div>
+          <div class="col-md-5">
+            <div class="groupe">
+              <div class="haut">
+                    <app-product [prod]="world.products.product[0]" [vitesse]="upgradevit[0]" [prodmoney]="world.money" [bouton]="buttonactuel" class="product col-md-6" (notifyBuy)="onBuy($event)" (notifyProduction)="onProductionDone($event)">       
+                    </app-product>
+                  </div>  
+            </div>  
+          </div>
+          <div class="col-md-5">
+
+              <div class="haut">
+                <app-product [prod]="world.products.product[1]" [vitesse]="upgradevit[1]" [prodmoney]="world.money" [bouton]="buttonactuel" class="product col-md-6" (notifyBuy)="onBuy($event)" (notifyProduction)="onProductionDone($event)">       
+                </app-product>
+              </div> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+              <button class="button" data-toggle="modal" data-target="#exampleModal">
+                <span class="badge" *ngIf="newmanag()">new</span>
+                Managers
+                </button>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title">Choisis ton camarade</h4>
+                        <button class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div ><div *ngFor="let manager of world.managers.pallier">
+                          <app-manager [setmanag]="manager" [setmoney]="world.money" (notifymanag)="achatmanag($event)"></app-manager>
+                        </div>
+                      </div>                              
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <button class="button">Investors</button>
+          </div>
+          <div class="col-md-5">
+            <div class="groupe">
+              <div class="haut">
+                <app-product [prod]="world.products.product[2]" [vitesse]="upgradevit[2]" [prodmoney]="world.money" [bouton]="buttonactuel" class="product col-md-6" (notifyBuy)="onBuy($event)" (notifyProduction)="onProductionDone($event)">       
+                </app-product>
+              </div>
+              <div class="bas"></div>
+            </div>  
+          </div>
+          <div class="col-md-5">
+            <div class="groupe">
+              <div class="haut">
+                <app-product [prod]="world.products.product[3]" [vitesse]="upgradevit[3]" [prodmoney]="world.money" [bouton]="buttonactuel" class="product col-md-6" (notifyBuy)="onBuy($event)" (notifyProduction)="onProductionDone($event)">       
+                </app-product>
+              </div>
+              <div class="bas"></div>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">            <toaster-container class=notif></toaster-container></div>
+          <div class="col-md-5">
+            <div class="groupe">
+              <div class="haut">
+                <app-product [prod]="world.products.product[4]" [vitesse]="upgradevit[4]" [prodmoney]="world.money" [bouton]="buttonactuel" class="product col-md-6" (notifyBuy)="onBuy($event)" (notifyProduction)="onProductionDone($event)">       
+                </app-product>
+              </div>
+              <div class="bas"></div>
+            </div>  
+          </div>
+          <div class="col-md-5">
+            <div class="groupe">
+              <div class="haut">
+                <app-product [prod]="world.products.product[5]" [vitesse]="upgradevit[5]" [prodmoney]="world.money" [bouton]="buttonactuel" class="product col-md-6" (notifyBuy)="onBuy($event)" (notifyProduction)="onProductionDone($event)">       
+                </app-product>
+              </div>
+            </div>  
+          </div>
+        </div>    
+      </div>
+  </div>
+<router-outlet></router-outlet>

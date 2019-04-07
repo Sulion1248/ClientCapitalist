@@ -1,0 +1,6 @@
+<div *ngIf="!manag.unlocked"><div> <img src={{cheminimage}}{{manag.logo}} alt="moustache" class="logoProduit2" widht="200px"/>
+    <br/>{{manag.name}} </div>
+    <div>
+    <button class="button4" *ngIf="EstAchetable()" (click)="this.notifymanag.emit(this.manag)">Coût : {{manag.seuil}}</button>
+    <button class="button5" *ngIf="!EstAchetable()">Coût : {{manag.seuil}}</button></div></div>
+    

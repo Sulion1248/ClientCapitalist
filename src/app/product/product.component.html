@@ -1,0 +1,6 @@
+<div><img src={{cheminimage}}{{product.logo}} (click)="startFabrication()" alt="logo" class="logoProduit" widht="200px"/>
+<div class="text2">{{product.name}} x{{product.quantite | bigvalue}}
+<button class="button2" *ngIf="achatposs()" (click)="this.notifyBuy.emit([this.cout,this.quantiteachat,this.product])">Achete {{quantiteachat | bigvalue}} pour : {{cout | bigvalue}}</button>
+<button class="button3" *ngIf="!achatposs()" >Achete {{quantiteachat | bigvalue}} pour : {{cout | bigvalue}}</button></div>
+<div class="progress" #bar> </div>
+</div>
